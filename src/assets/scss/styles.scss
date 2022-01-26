@@ -1,0 +1,273 @@
+@use "../scss" as v;
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: v.$defaultFontSize;
+}
+@media only screen and (min-width: 576px) {
+  :root {
+    --defaultFontSize: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --defaultFontSize: 112.5%;
+  }
+}
+
+body {
+  background: v.$backgroundColor;
+  color: v.$textColor;
+  font-family: v.$bodyFont;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1rem;
+  max-width: 40em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  margin-bottom: 1.38rem;
+  font-family: v.$headingFont;
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: v.$letterSpacing;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text-small {
+  font-size: v.$smallText;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.form {
+  width: 100%;
+  background: v.$white;
+  border-radius: v.$borderRadius;
+  box-shadow: v.$shadow-2;
+  padding: 2rem 2.5rem;
+}
+
+label {
+  display: block;
+  font-size: v.$smallText;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: v.$borderRadius;
+  background: v.$grey-0;
+  border-color: transparent;
+  border: 1px solid v.$grey-300;
+}
+.form-row {
+  margin-bottom: 1rem;
+}
+textarea {
+  width: 100%;
+  height: 7rem;
+}
+
+::placeholder {
+  color: v.$grey-600;
+}
+.form-alert {
+  color: v.$red-dark;
+  font-size: v.$extraSmallText;
+  letter-spacing: v.$letterSpacing;
+  text-transform: capitalize;
+}
+hr {
+  border-top: v.$line;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  appearance: none;
+  color: v.$white;
+  background: v.$primary-500;
+  border: none;
+  border-radius: v.$borderRadius;
+  letter-spacing: v.$letterSpacing;
+  padding: 0.375rem 0.75rem;
+  box-shadow: v.$shadow-1;
+  transition: v.$transition;
+  text-transform: capitalize;
+}
+button:hover,
+.btn:hover {
+  color: v.$white;
+  background: v.$primary-700;
+  box-shadow: v.$shadow-2;
+}
+button.small {
+  padding: 0.25rem 0.5rem;
+  font-size: v.$smallText;
+}
+button.hipster {
+  color: v.$primary-500;
+  background: v.$primary-50;
+  box-shadow: v.$shadow-1;
+}
+button.hipster:hover {
+  background: v.$primary-100;
+  box-shadow: v.$shadow-2;
+}
+button.block {
+  width: 100%;
+}
+
+/* Basic Classes */
+.alert {
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 1rem;
+  border-color: transparent;
+  border-radius: v.$borderRadius;
+}
+
+.alert-success {
+  color: v.$green-dark;
+  background-color: v.$green-light;
+}
+.alert-danger {
+  color: v.$red-dark;
+  background-color: v.$red-light;
+}
+
+.container {
+  padding: 5rem 0;
+}
+.container-center {
+  width: 90vw;
+  max-width: v.$max-width;
+  margin: 0 auto;
+}
+.page {
+  width: 90vw;
+  max-width: v.$max-width;
+  margin: 0 auto;
+}
+.page {
+  min-height: calc(100vh - (6rem + 4rem));
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.title-underline {
+  height: 0.2rem;
+  width: 7rem;
+  background: v.$primary-600;
+  margin: 0 auto;
+}
+
+form > *:last-child {
+  margin-bottom: 0;
+}
+
+/* loading */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: v.$primary-50;
+  animation: spinner 0.6s linear infinite;
+}
+.loading {
+  margin: 0 auto;
+}
+/* form loading */
+
+.form-loading {
+  position: relative;
+}
+.form-loading::before {
+  background: v.$white;
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: v.$borderRadius;
+  opacity: 0.8;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-loading::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3rem);
+  left: calc(50% - 3rem);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: v.$primary-50;
+  animation: spinner 0.6s linear infinite;
+}
