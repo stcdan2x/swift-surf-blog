@@ -1,8 +1,6 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
 
-import "../assets/scss/navbar.scss"
-
 const Navbar = () => {
   const [show, setShow] = useState(false)
 

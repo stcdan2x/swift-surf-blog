@@ -1,6 +1,8 @@
 import React from "react"
 
 import "normalize.css"
+import "../assets/scss/styles.scss"
+
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
