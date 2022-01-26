@@ -1,0 +1,26 @@
+@use "./variables" as v;
+
+.page-footer {
+  text-align: center;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: v.$black;
+  color: v.$white;
+}
+.page-footer h5 {
+  margin-bottom: 0;
+}
+.page-footer p {
+  margin-bottom: 0;
+}
+.page-footer span,
+.page-footer a {
+  color: v.$primary-500;
+  font-weight: 700;
+}
+
+.page-footer span {
+  margin-left: 1rem;
+}

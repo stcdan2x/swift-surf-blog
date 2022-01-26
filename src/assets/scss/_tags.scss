@@ -1,0 +1,76 @@
+@use "./variables" as v;
+
+.tags-container {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tags-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tags-container h4 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.tags-list a {
+  text-transform: capitalize;
+  display: block;
+  color: v.$grey-800;
+  transition: v.$transition;
+}
+
+.tags-list a:hover {
+  color: v.$primary-500;
+}
+
+.tags-page {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.tag {
+  background: v.$grey-700;
+  border-radius: v.$borderRadius;
+  text-align: center;
+  color: v.$white;
+  transition: v.$transition;
+  padding: 0.75rem 0;
+}
+
+.tag:hover {
+  background: v.$primary-500;
+}
+
+.tag h5,
+.tag p {
+  margin-bottom: 0;
+}
+
+.tag h5 {
+  font-weight: 600;
+}
+
+@media screen and (min-width: 576px) {
+  .tags-page {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .tags-container {
+    order: 0;
+  }
+  .tags-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .tags-page {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

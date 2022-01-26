@@ -26,7 +26,7 @@ const about = () => {
           </article>
         </section>
         <section className="featured-recipes">
-          <h5>Look at this Awesomesouce!</h5>
+          <h5>Lorem ipsum dolor sit amet.</h5>
         </section>
       </main>
     </Layout>
