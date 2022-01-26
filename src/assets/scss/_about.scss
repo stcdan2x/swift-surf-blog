@@ -1,0 +1,31 @@
+@use "./variables" as v;
+
+.about-page h2 {
+  text-transform: none;
+  font-weight: bold;
+}
+.about-page {
+  display: grid;
+  gap: 2rem 4rem;
+  padding-bottom: 3rem;
+}
+.about-img {
+  border-radius: v.$borderRadius;
+  height: 500px;
+}
+
+@media screen and (min-width: 992px) {
+  .about-page {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 400px;
+  }
+  .about-img {
+    height: 100%;
+  }
+}
+
+.featured-recipes > h5 {
+  text-align: center;
+  max-width: 100%;
+}

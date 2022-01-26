@@ -1,0 +1,165 @@
+@use "./variables" as v;
+
+.sights-container {
+  display: grid;
+  gap: 2rem 1rem;
+}
+
+.sights-list {
+  display: grid;
+  gap: 2rem 1rem;
+  padding-bottom: 3rem;
+}
+
+.sight {
+  display: block;
+}
+.sight-img {
+  height: 15rem;
+  border-radius: v.$borderRadius;
+}
+.sight h5 {
+  margin-bottom: 0;
+  margin-top: 0.25rem;
+  line-height: 1;
+  color: v.$textColor;
+  font-weight: 600;
+}
+.sight p {
+  margin-bottom: 0;
+  line-height: 1;
+  color: v.$grey-800;
+  margin-top: 0.5rem;
+}
+@media screen and (min-width: 576px) {
+  .sights-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sight-img {
+    height: 10rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .sights-container {
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+  }
+  .sights-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sight-img {
+    height: 9rem;
+  }
+
+  .sight p {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sight h5 {
+    font-size: 1.15rem;
+  }
+  .sights-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/*#########*/
+/* sight Template */
+/*#########*/
+
+.sight-hero {
+  display: grid;
+  gap: 3rem;
+}
+.sight-hero .about-img {
+  height: 400px;
+}
+.sight-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+.sight-icons svg {
+  font-size: 1.5rem;
+}
+.sight-icons h5,
+.sight-icons p {
+  margin-bottom: 0;
+  font-size: 0.85em;
+}
+.sight-icons h5 {
+  font-weight: 600;
+}
+.sight-icons p {
+  color: v.$grey-800;
+}
+.sight-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.sight-tags a {
+  background: v.$primary-500;
+  border-radius: v.$borderRadius;
+  color: v.$white;
+  padding: 0.05rem 0.5rem;
+  margin: 0 0.25rem;
+  text-transform: capitalize;
+}
+@media screen and (min-width: 992px) {
+  .sight-hero {
+    grid-template-columns: 4fr 5fr;
+    align-items: center;
+  }
+}
+.sight-content {
+  padding: 3rem 0;
+  display: grid;
+  gap: 2rem 5rem;
+}
+@media screen and (min-width: 992px) {
+  .sight-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+.single-instruction header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.single-instruction header p {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: v.$primary-500;
+  margin-bottom: 0;
+}
+
+.single-instruction header div {
+  height: 1px;
+  background: v.$grey-500;
+}
+
+.second-column {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.single-ingredient {
+  border-bottom: 1px solid v.$grey-500;
+  padding-bottom: 0.75rem;
+}
+.single-tool {
+  border-bottom: 1px solid v.$grey-500;
+  padding-bottom: 0.75rem;
+  color: v.$primary-500;
+  text-transform: capitalize;
+}

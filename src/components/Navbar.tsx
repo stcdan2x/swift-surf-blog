@@ -1,8 +1,6 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
 
-import "../assets/scss/navbar.scss"
-
 const Navbar = () => {
   const [show, setShow] = useState(false)
 
@@ -14,7 +12,7 @@ const Navbar = () => {
             <h3>|.SWIFT.SURF.|</h3>
           </Link>
           <button className="nav-btn" onClick={() => setShow(!show)}>
-            M
+            O
           </button>
         </div>
         <div className={show ? "nav-links show-links" : "nav-links"}>
@@ -27,12 +25,12 @@ const Navbar = () => {
             home
           </Link>
           <Link
-            to="/recipes"
+            to="/sights"
             className="nav-link"
             activeClassName="active-link"
             onClick={() => setShow(false)}
           >
-            recipes
+            sights
           </Link>
           <Link
             to="/tags"
