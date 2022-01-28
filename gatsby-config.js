@@ -6,7 +6,31 @@
 
 module.exports = {
   /* Your site config here */
+
+  siteMetadata: {
+    title: "Swift-Surf",
+    description: "Trek the World",
+    author: "Steven Dandan",
+    person: { name: "Steve", age: "37" },
+    simpleData: ["item 1", "item 2"],
+    complexData: [
+      { model: "Altis", year: "2016" },
+      { model: "Vios", year: "2016" },
+    ],
+  },
+
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
@@ -19,10 +43,21 @@ module.exports = {
             family: "Roboto",
             weights: ["100", "300", "400", "700", "900"],
           },
+          {
+            family: "Permanent Marker",
+            weights: ["400"],
+          },
+          {
+            family: "Oxygen",
+            weights: ["300", "400", "700"],
+          },
+          {
+            family: "Architects Daughter",
+            weights: ["400"],
+          },
         ],
         display: "swap",
       },
     },
-    `gatsby-plugin-sass`,
   ],
 }

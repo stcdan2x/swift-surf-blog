@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Layout from "../components/Layout"
 
@@ -13,19 +14,27 @@ const about = () => {
               deleniti?
             </h2>
             <p>
-              Taxidermy forage glossier letterpress heirloom before they sold
-              out you probably haven't heard of them banh mi biodiesel chia.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              saepe quo soluta doloremque quos sapiente labore fugiat minus.
             </p>
             <p>
-              Taiyaki tumblr flexitarian jean shorts brunch, aesthetic salvia
-              retro.
+              Ullam recusandae quisquam consequuntur minus blanditiis distinctio
+              assumenda veritatis optio magnam veniam fugit eveniet
+              reprehenderit aliquid facere est, explicabo quibusdam dolore
+              quidem!
             </p>
             <Link to="/contact" className="btn">
               contact
             </Link>
           </article>
+          <StaticImage
+            src="../assets/images/about.jpg"
+            alt="Person viewing landscape"
+            className="about-img"
+            placeholder="blurred"
+          />
         </section>
-        <section className="featured-recipes">
+        <section className="featured-sights">
           <h5>Lorem ipsum dolor sit amet.</h5>
         </section>
       </main>

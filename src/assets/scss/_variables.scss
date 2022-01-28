@@ -43,11 +43,18 @@ $green-dark: #0f5132;
 /* gradients */
 $grey-silver: linear-gradient(
     to bottom left,
-    rgb(147, 147, 147) 0%,
-    rgb(181, 181, 181) 50%,
-    rgb(97, 97, 97) 100%
+    rgb(126, 126, 126) 0%,
+    rgb(182, 182, 182) 50%,
+    rgb(70, 70, 70) 100%
   )
   no-repeat fixed;
+// $grey-silver: linear-gradient(
+//     to bottom left,
+//     rgb(191, 255, 0) 0%,
+//     rgb(255, 255, 46) 50%,
+//     rgb(255, 169, 77) 100%
+//   )
+//   no-repeat fixed;
 
 /* box shadows */
 $shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -59,8 +66,11 @@ $shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
 
 /* typography */
 $defaultFontSize: 87.5%;
-$headingFont: "Inconsolata", monospace;
-$bodyFont: "Montserrat", sans-serif;
+$headingFont: "Montserrat", sans-serif;
+$bodyFont: "Oxygen", sans-serif;
+$strongFont: "Permanent Marker", sans-serif;
+$subFont: monospace;
+$specFont: "Architects Daughter";
 $smallText: 0.8em;
 $extraSmallText: 0.7em;
 

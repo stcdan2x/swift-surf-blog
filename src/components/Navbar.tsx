@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <h3>|.SWIFT.SURF.|</h3>
+            <h3 className="nav-logo">SwiftSurf</h3>
           </Link>
           <button className="nav-btn" onClick={() => setShow(!show)}>
             O

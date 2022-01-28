@@ -138,9 +138,9 @@ button,
   cursor: pointer;
   appearance: none;
   color: v.$white;
-  background: v.$primary-500;
-  border: none;
-  border-radius: v.$borderRadius;
+  background: v.$primary-800;
+  border: 2px solid v.$white;
+  border-radius: v.$borderRadius + 0.2;
   letter-spacing: v.$letterSpacing;
   padding: 0.375rem 0.75rem;
   box-shadow: v.$shadow-1;
