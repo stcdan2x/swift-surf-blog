@@ -1,9 +1,14 @@
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Layout from "../components/Layout"
+import SightsList from "../components/SightsList"
 
-const about = () => {
+const Aboutpage = ({
+  data: {
+    allContentfulSwiftsights: { nodes },
+  },
+}) => {
   return (
     <Layout>
       <main className="page">
@@ -23,7 +28,7 @@ const about = () => {
               reprehenderit aliquid facere est, explicabo quibusdam dolore
               quidem!
             </p>
-            <Link to="/contact" className="btn">
+            <Link to="/contactpage" className="btn">
               contact
             </Link>
           </article>
@@ -31,15 +36,38 @@ const about = () => {
             src="../assets/images/about.jpg"
             alt="Person viewing landscape"
             className="about-img"
-            placeholder="blurred"
+            placeholder="tracedSVG"
           />
         </section>
         <section className="featured-sights">
-          <h5>Lorem ipsum dolor sit amet.</h5>
+          <h5>Featured Sights</h5>
+          <SightsList nodes={nodes} />
         </section>
       </main>
     </Layout>
   )
 }
 
-export default about
+export const query = graphql`
+  {
+    allContentfulSwiftsights(filter: { featured: { eq: true } }) {
+      nodes {
+        id
+        image {
+          file {
+            url
+          }
+          gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+        }
+        title
+        content {
+          tags
+          attractions
+          activities
+        }
+      }
+    }
+  }
+`
+
+export default Aboutpage

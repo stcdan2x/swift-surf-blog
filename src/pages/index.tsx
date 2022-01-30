@@ -1,5 +1,6 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
+import AllSights from "../components/AllSights"
 import Layout from "../components/Layout"
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
             </div>
           </div>
         </header>
+        <AllSights />
       </main>
     </Layout>
   )

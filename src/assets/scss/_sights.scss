@@ -17,6 +17,7 @@
 .sight-img {
   height: 15rem;
   border-radius: v.$borderRadius;
+  min-width: 250px;
 }
 .sight h5 {
   margin-bottom: 0;
@@ -55,6 +56,14 @@
 
   .sight p {
     font-size: 0.85rem;
+  }
+
+  .tags-container {
+    order: 0;
+  }
+  .tags-list {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 

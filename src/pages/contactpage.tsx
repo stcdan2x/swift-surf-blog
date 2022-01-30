@@ -1,7 +1,13 @@
+import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/Layout"
+import SightsList from "../components/SightsList"
 
-const contact = () => {
+const Contactpage = ({
+  data: {
+    allContentfulSwiftsights: { nodes },
+  },
+}) => {
   return (
     <Layout>
       <main className="page">
@@ -44,10 +50,33 @@ const contact = () => {
         </section>
         <section className="featured-recipes">
           <h5>Check it out!</h5>
+          <SightsList nodes={nodes} />
         </section>
       </main>
     </Layout>
   )
 }
 
-export default contact
+export const query = graphql`
+  {
+    allContentfulSwiftsights(filter: { featured: { eq: true } }) {
+      nodes {
+        id
+        image {
+          file {
+            url
+          }
+          gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+        }
+        title
+        content {
+          tags
+          attractions
+          activities
+        }
+      }
+    }
+  }
+`
+
+export default Contactpage
