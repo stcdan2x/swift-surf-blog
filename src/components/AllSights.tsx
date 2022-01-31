@@ -1,7 +1,7 @@
-import { graphql, useStaticQuery } from "gatsby"
-import React from "react"
-import SightsList from "./SightsList"
-import Tagslist from "./Tagslist"
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import SightsList from "./SightsList";
+import Tagslist from "./Tagslist";
 
 const query = graphql`
   {
@@ -24,19 +24,19 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 const AllSights = () => {
   const {
     allContentfulSwiftsights: { nodes },
-  } = useStaticQuery(query)
+  } = useStaticQuery(query);
 
   return (
     <section className="sights-container">
       <Tagslist nodes={nodes} />
       <SightsList nodes={nodes} />
     </section>
-  )
-}
+  );
+};
 
-export default AllSights
+export default AllSights;

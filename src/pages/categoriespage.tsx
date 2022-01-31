@@ -1,14 +1,48 @@
-import React from "react"
-import Layout from "../components/Layout"
+import { graphql, Link } from "gatsby";
+import React from "react";
+import Layout from "../components/Layout";
+import tagsProc from "../utils/tagUtils";
 
-const CategoriesPage = () => {
+export const query = graphql`
+  {
+    allContentfulSwiftsights {
+      nodes {
+        content {
+          tags
+        }
+      }
+    }
+  }
+`;
+
+const CategoriesPage = ({
+  data: {
+    allContentfulSwiftsights: { nodes },
+  },
+}) => {
+  const catEnum = tagsProc(nodes);
+
   return (
     <Layout>
       <main className="page">
-        <section className="tags-page">Categories</section>
+        <h1>Categories</h1>
+        <section className="tags-page">
+          {catEnum.map((tag, idx) => {
+            const [text, count] = tag;
+
+            return (
+              <Link to={`/${text}`} key={idx} className="tag">
+                <h5>{text}</h5>
+                <p>
+                  {count} {count > 1 ? "destinations" : "destination"}
+                </p>
+              </Link>
+            );
+          })}
+        </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
-export default CategoriesPage
+export default CategoriesPage;

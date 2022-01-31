@@ -1,7 +1,7 @@
-import { StaticImage } from "gatsby-plugin-image"
-import React from "react"
-import AllSights from "../components/AllSights"
-import Layout from "../components/Layout"
+import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import AllSights from "../components/AllSights";
+import Layout from "../components/Layout";
 
 export default function Home() {
   return (
@@ -27,5 +27,5 @@ export default function Home() {
         <AllSights />
       </main>
     </Layout>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import React from "react"
-import Layout from "../components/Layout"
-import SightsList from "../components/SightsList"
+import { graphql, Link, useStaticQuery } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import Layout from "../components/Layout";
+import SightsList from "../components/SightsList";
 
 const Aboutpage = ({
   data: {
@@ -45,8 +45,8 @@ const Aboutpage = ({
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   {
@@ -68,6 +68,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Aboutpage
+export default Aboutpage;

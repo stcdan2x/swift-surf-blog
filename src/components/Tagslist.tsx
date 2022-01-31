@@ -1,22 +1,29 @@
-import React from "react"
-import { nodeType } from "./SightsList"
+import { Link } from "gatsby";
+import React from "react";
+import slugify from "slugify";
+import tagsProc from "../utils/tagUtils";
+import { nodeType } from "./SightsList";
 
 const Tagslist = ({ nodes = [] }: { nodes: nodeType[] }) => {
-  console.log(nodes)
+  console.log(nodes);
+  const catEnum = tagsProc(nodes);
 
   return (
-    <div className="tags-container">
-      <h4>Sights Categories</h4>
-      <div className="tags-list">
-        {nodes.map((node: nodeType, i: number) => (
-          <p key={node.id}>
-            {node.content.tags[0]}, {node.content.tags[1]},{" "}
-            {node.content.tags[2]}
-          </p>
-        ))}
+    <aside className="tags-container">
+      <h4>Categories</h4>
+      <div className="list-container">
+        <ul className="tags-list">
+          {catEnum.map((item, idx: number) => (
+            <li key={idx}>
+              <Link to={`/${item[0]}`}>
+                {item[0]} - ( {item[1]} )
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
-  )
-}
+    </aside>
+  );
+};
 
-export default Tagslist
+export default Tagslist;
