@@ -5,7 +5,7 @@
  */
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   /* Your site config here */
@@ -14,12 +14,6 @@ module.exports = {
     title: "Swift-Surf",
     description: "Trek the World",
     author: "Steven Dandan",
-    person: { name: "Steve", age: "37" },
-    simpleData: ["item 1", "item 2"],
-    complexData: [
-      { model: "Altis", year: "2016" },
-      { model: "Vios", year: "2016" },
-    ],
   },
 
   plugins: [
@@ -71,4 +65,4 @@ module.exports = {
       },
     },
   ],
-}
+};

@@ -17,7 +17,6 @@ const tagsProc = nodes => {
 
     return tagcurr.localeCompare(tagnext);
   });
-  console.log(tagsWithCount);
 
   return tagsWithCount;
 };

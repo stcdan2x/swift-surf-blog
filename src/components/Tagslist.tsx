@@ -13,13 +13,17 @@ const Tagslist = ({ nodes = [] }: { nodes: nodeType[] }) => {
       <h4>Categories</h4>
       <div className="list-container">
         <ul className="tags-list">
-          {catEnum.map((item, idx: number) => (
-            <li key={idx}>
-              <Link to={`/${item[0]}`}>
-                {item[0]} - ( {item[1]} )
-              </Link>
-            </li>
-          ))}
+          {catEnum.map((item, idx: number) => {
+            const [text, count] = item,
+              slug = slugify(text, { lower: true });
+            return (
+              <li key={idx}>
+                <Link to={`/categories/${slug}`}>
+                  {text} - ( {count} )
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </aside>

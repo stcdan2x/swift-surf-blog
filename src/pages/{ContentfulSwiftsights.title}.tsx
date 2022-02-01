@@ -56,7 +56,7 @@ const SightsPageTemplate = ({ data }) => {
                   const slug = slugify(tag, { lower: true });
 
                   return (
-                    <Link to={`/tags/${slug}`} key={idx}>
+                    <Link to={`/categories/${slug}`} key={idx}>
                       {tag}
                     </Link>
                   );
