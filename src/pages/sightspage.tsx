@@ -1,14 +1,15 @@
 import React from "react"
+import AllSights from "../components/AllSights"
 import Layout from "../components/Layout"
 
-const tags = () => {
+const Sightspage = () => {
   return (
     <Layout>
       <main className="page">
-        <section className="tags-page">Website Tags</section>
+        <AllSights />
       </main>
     </Layout>
   )
 }
 
-export default tags
+export default Sightspage

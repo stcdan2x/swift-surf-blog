@@ -1,14 +1,30 @@
 @use "./variables" as v;
 
 .tags-container {
-  order: 1;
+  order: 0;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .tags-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  // grid-template-columns: 1fr 1fr 1fr;
+  font-weight: 900;
+  width: 100%;
+
+  li {
+    text-align: center;
+    color: v.$primary-900;
+  }
 }
 
 .tags-container h4 {
@@ -62,14 +78,6 @@
 }
 
 @media screen and (min-width: 992px) {
-  .tags-container {
-    order: 0;
-  }
-  .tags-list {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
   .tags-page {
     grid-template-columns: 1fr 1fr 1fr;
   }

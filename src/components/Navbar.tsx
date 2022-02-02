@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <h3>|.SWIFT.SURF.|</h3>
+            <h3 className="nav-logo">SwiftSurf</h3>
           </Link>
           <button className="nav-btn" onClick={() => setShow(!show)}>
             O
@@ -25,7 +25,7 @@ const Navbar = () => {
             home
           </Link>
           <Link
-            to="/sights"
+            to="/sightspage"
             className="nav-link"
             activeClassName="active-link"
             onClick={() => setShow(false)}
@@ -33,15 +33,15 @@ const Navbar = () => {
             sights
           </Link>
           <Link
-            to="/tags"
+            to="/categoriespage"
             className="nav-link"
             activeClassName="active-link"
             onClick={() => setShow(false)}
           >
-            tags
+            categories
           </Link>
           <Link
-            to="/about"
+            to="/aboutpage"
             className="nav-link"
             activeClassName="active-link"
             onClick={() => setShow(false)}
@@ -49,7 +49,11 @@ const Navbar = () => {
             about
           </Link>
           <div className="nav-link contact-link">
-            <Link to="/contact" className="btn" onClick={() => setShow(false)}>
+            <Link
+              to="/contactpage"
+              className="btn"
+              onClick={() => setShow(false)}
+            >
               contact
             </Link>
           </div>
